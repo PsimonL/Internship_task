@@ -28,8 +28,8 @@ results.
 short report containing performance comparison between the two approaches (e.g.
 which one is faster) in a PDF format. Upload the PDF to the same folder as the cvs files.
 
-Expected architecture of your solution:
-![architecture-diagram.png](/README_stuff/architecture-diagram.png)
+Expected architecture of your solution:  
+![architecture-diagram.png](/README_stuff/architecture-diagram.png)  
 
 We will score your solution based on these criteria:
 - What % of the task you managed to implement
