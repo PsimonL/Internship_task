@@ -1,3 +1,6 @@
+# Documentation
+
+# Problem Description
 ## DevOps for the Data Science team intern – interview tasks  
 Your solution should be hosted as a new GitHub repository. Don’t send any files, only a link to
 the repository.  
@@ -24,3 +27,17 @@ results.
 8. Compare the performance of the web app solution to the tensorflow solution. Prepare a
 short report containing performance comparison between the two approaches (e.g.
 which one is faster) in a PDF format. Upload the PDF to the same folder as the cvs files.
+
+Expected architecture of your solution:
+![architecture-diagram.png](/README_stuff/architecture-diagram.png)
+
+We will score your solution based on these criteria:
+- What % of the task you managed to implement
+- Report of results
+- Clean code
+- Project structure
+- Configurability
+- Naming conventions
+- Simplicity
+- Comments
+- Readme
