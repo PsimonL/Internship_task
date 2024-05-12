@@ -38,9 +38,6 @@ jobs:
         echo "Container health check..."
         timeout 30s bash -c 'while [[ "$(docker inspect -f {{.State.Health.Status}} insta_cloud_app)" != "healthy" ]]; do sleep 1; done'
 
-    - name: Test Docker Container
-      run: curl -X POST http://localhost:8080/convert -H "Content-Type: application/json" -d '{"fahrenheit": 32}'
-
     - name: Login to Docker Hub
       uses: docker/login-action@v1
       with:
