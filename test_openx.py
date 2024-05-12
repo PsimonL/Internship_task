@@ -18,6 +18,12 @@ class TestOpenx(unittest.TestCase):
         data = response.get_json()
         self.assertEqual(data['celsius'], 0)
 
+    def test_convert_212F_to_100C(self):
+        response = self.app.post('/convert', json={'fahrenheit': 212})
+        data = response.get_json()
+        self.assertEqual(data['celsius'], 100)
+
+
 
 if __name__ == '__main__':
     unittest.main()
