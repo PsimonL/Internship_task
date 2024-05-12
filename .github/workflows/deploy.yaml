@@ -47,7 +47,7 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
 
     - name: Tag Artifact Docker Image
-      run: docker tag openx_intern_task:1.0.0 ${{ secrets.DOCKER_USERNAME }}/openx_intern_task:1.0.0
+      run: docker tag openx_intern_task ${{ secrets.DOCKER_USERNAME }}/openx_intern_task:1.0.0
 
     - name: Push Artifact to Docker Hub
       run: docker push ${{ secrets.DOCKER_USERNAME }}/openx_intern_task:1.0.0
