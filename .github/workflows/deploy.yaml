@@ -33,7 +33,7 @@ jobs:
       run: docker build -t openx_intern_task:1.0.0 .
 
     - name: Run Docker Container
-      run: docker run -p 8080:8080 openx_intern_task:1.0.0
+      run: docker run -d -p 8080:8080 openx_intern_task:1.0.0
 
     - name: Wait for container to be healthy
       run: |
