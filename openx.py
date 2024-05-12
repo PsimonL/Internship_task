@@ -7,7 +7,8 @@ from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
-APP_IDENTIFIER = ''.join(random.choices('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890', k=10))
+chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
+APP_IDENTIFIER = ''.join(random.choices(chars, k=10))
 
 
 @app.route('/convert', methods=['POST'])
