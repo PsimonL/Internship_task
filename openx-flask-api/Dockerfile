@@ -5,7 +5,7 @@ WORKDIR /app
 COPY openx.py /app
 COPY requirements.txt /app
 
-RUN pip install -r requirements.txt
+RUN pip install -r prod.txt
 
 EXPOSE 8080
 
