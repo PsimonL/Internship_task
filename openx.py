@@ -17,5 +17,5 @@ def convert_fahrenheit_to_celsius():
     return jsonify({'celsius': celsius, 'app_identifier': app_identifier})
 
 if __name__ == '__main__':
-    print("Server listening on port 5000...")
-    app.run(debug=True)
+    print("Server listening on port 8080...")
+    app.run(debug=True, port=8080)

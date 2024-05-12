@@ -7,7 +7,7 @@ COPY requirements.txt /app
 
 RUN pip install -r requirements.txt
 
-EXPOSE 5000
+EXPOSE 8080
 
 ENV FLASK_APP=openx.py
 
