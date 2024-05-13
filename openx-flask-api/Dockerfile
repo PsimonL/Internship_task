@@ -3,11 +3,11 @@ FROM python:3.9-slim
 WORKDIR /app
 
 COPY openx.py /app
-COPY requirements.txt /app
+COPY requirements/prod.txt /app
 
 RUN pip install -r prod.txt
 
-EXPOSE 8080
+EXPOSE 5000
 
 ENV FLASK_APP=openx.py
 
