@@ -28,12 +28,14 @@ def convert_fahrenheit_to_celsius():
     print("Request will be served.")
     return jsonify({'celsius': celsius, 'app_identifier': APP_IDENTIFIER})
 
+
 @app.route('/probe', methods=['GET'])
 def probes_test():
     """
     Satisfies K8S health, probe system.
     """
     return jsonify({'message': 'K8s Probe request'})
+
 
 if __name__ == '__main__':
     print("Server listening on port 5000...")
