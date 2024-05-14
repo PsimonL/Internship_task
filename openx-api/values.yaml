@@ -26,7 +26,7 @@ securityContext: {}
 service:
   type: NodePort
   port: 80
-  targetPort: 5000
+  targetPort: 8080
 #  targetPort: 80
   nodePort: 30001
 
@@ -48,7 +48,7 @@ livenessProbe:
   timeoutSeconds: 10
   httpGet:
     path: /probe
-    port: 5000
+    port: 8080
   initialDelaySeconds: 10
 
 readinessProbe:
@@ -56,7 +56,7 @@ readinessProbe:
   timeoutSeconds: 10
   httpGet:
     path: /probe
-    port: 5000
+    port: 8080
   initialDelaySeconds: 10
 
 autoscaling:
