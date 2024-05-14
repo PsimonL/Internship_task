@@ -2,6 +2,7 @@ Invoke-RestMethod -Uri http://localhost:5000/convert -Method Post -ContentType "
 Invoke-RestMethod -Uri http://localhost:5000/probe -Method Get
 
 docker build -t openx_intern_task .
+docker build -t openx_intern_task -f Dockerfile-go .
 
 docker run -p 5000:5000 openx_intern_task
 
