@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "openx-api.fullname" . }}
+  name: {{ include "api.fullname" . }}
   labels:
-    {{- include "openx-api.labels" . | nindent 4 }}
+    {{- include "api.labels" . | nindent 4 }}
 spec:
   type: {{ .Values.service.type }}
   ports:
@@ -13,5 +13,5 @@ spec:
       protocol: TCP
       name: http
   selector:
-    {{- include "openx-api.selectorLabels" . | nindent 4 }}
+    {{- include "api.selectorLabels" . | nindent 4 }}
 
