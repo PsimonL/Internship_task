@@ -1,3 +1,7 @@
+/*
+Tests for openx.go
+*/
+
 package main
 
 import (
@@ -9,30 +13,27 @@ import (
 )
 
 func TestConvertFahrenheitToCelsiusSuccess(t *testing.T) {
-	// Prepare a request body with Fahrenheit value
+	/*
+    Test conversion of Fahrenheit to Celsius with successful response.
+	*/
 	reqBody := map[string]interface{}{"fahrenheit": 32}
 	reqBodyBytes, _ := json.Marshal(reqBody)
 
-	// Create a request with the prepared body
 	req, err := http.NewRequest("POST", "/convert", bytes.NewBuffer(reqBodyBytes))
 	if err != nil {
 		t.Fatal(err)
 	}
 
-	// Create a ResponseRecorder to record the response
 	rr := httptest.NewRecorder()
 
-	// Call the handler function with the created request and ResponseRecorder
 	handler := http.HandlerFunc(convertFahrenheitToCelsius)
 	handler.ServeHTTP(rr, req)
 
-	// Check the status code
 	if rr.Code != http.StatusOK {
 		t.Errorf("handler returned wrong status code: got %v want %v",
 			rr.Code, http.StatusOK)
 	}
 
-	// Check if the response body contains the expected fields
 	var response map[string]interface{}
 	if err := json.Unmarshal(rr.Body.Bytes(), &response); err != nil {
 		t.Errorf("error decoding JSON response: %v", err)
@@ -48,24 +49,22 @@ func TestConvertFahrenheitToCelsiusSuccess(t *testing.T) {
 }
 
 func TestConvert32FTo0C(t *testing.T) {
-	// Prepare a request body with Fahrenheit value
+	/*
+    Test conversion of 32°F to 0°C.
+	*/
 	reqBody := map[string]interface{}{"fahrenheit": 32}
 	reqBodyBytes, _ := json.Marshal(reqBody)
 
-	// Create a request with the prepared body
 	req, err := http.NewRequest("POST", "/convert", bytes.NewBuffer(reqBodyBytes))
 	if err != nil {
 		t.Fatal(err)
 	}
 
-	// Create a ResponseRecorder to record the response
 	rr := httptest.NewRecorder()
 
-	// Call the handler function with the created request and ResponseRecorder
 	handler := http.HandlerFunc(convertFahrenheitToCelsius)
 	handler.ServeHTTP(rr, req)
 
-	// Check if the response body contains the expected Celsius value
 	var response map[string]interface{}
 	if err := json.Unmarshal(rr.Body.Bytes(), &response); err != nil {
 		t.Errorf("error decoding JSON response: %v", err)
@@ -81,24 +80,22 @@ func TestConvert32FTo0C(t *testing.T) {
 }
 
 func TestConvert212FTo100C(t *testing.T) {
-	// Prepare a request body with Fahrenheit value
+	/*
+	Test conversion of 212°F to 100°C.
+    */
 	reqBody := map[string]interface{}{"fahrenheit": 212}
 	reqBodyBytes, _ := json.Marshal(reqBody)
 
-	// Create a request with the prepared body
 	req, err := http.NewRequest("POST", "/convert", bytes.NewBuffer(reqBodyBytes))
 	if err != nil {
 		t.Fatal(err)
 	}
 
-	// Create a ResponseRecorder to record the response
 	rr := httptest.NewRecorder()
 
-	// Call the handler function with the created request and ResponseRecorder
 	handler := http.HandlerFunc(convertFahrenheitToCelsius)
 	handler.ServeHTTP(rr, req)
 
-	// Check if the response body contains the expected Celsius value
 	var response map[string]interface{}
 	if err := json.Unmarshal(rr.Body.Bytes(), &response); err != nil {
 		t.Errorf("error decoding JSON response: %v", err)
