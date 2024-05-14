@@ -24,7 +24,6 @@ jobs:
 
     - name: Linting
       run: pylint *.py
-#      run: pylint --exit-zero *.py
 
     - name: Run Tests
       run: pytest
