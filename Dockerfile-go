@@ -4,7 +4,8 @@ RUN apk update && apk add --no-cache go
 
 WORKDIR /app
 
-COPY . .
+COPY openx.go /app
+COPY go.mod /app
 
 RUN go mod download
 

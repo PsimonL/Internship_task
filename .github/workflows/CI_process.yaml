@@ -1,4 +1,4 @@
-name: Docker artifact CI process
+name: Docker artifact CI process for Go project
 
 on:
   push:
@@ -14,22 +14,22 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v3
 
-    - name: Set up Python
-      uses: actions/setup-python@v3
+    - name: Set up Go
+      uses: actions/setup-go@v2
       with:
-        python-version: '3.10'
-
-    - name: Install dependencies
-      run: pip install -r requirements/pipeline.txt
-
+        go-version: '1.21'
+    
     - name: Linting
-      run: pylint *.py
+      run: golangci-lint run
 
     - name: Run Tests
-      run: pytest
+      run: go test
+
+    - name: Build the Go binary
+      run: go build -o main .
 
     - name: Build Docker Image
-      run: docker build -t openx_intern_task .
+      run: docker build -t openx_intern_task -f Dockerfile-go .
 
     - name: Run Docker Container
       run: docker run -d -p 8080:8080 --name openx_intern_task openx_intern_task
