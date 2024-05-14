@@ -53,4 +53,4 @@ jobs:
       run: docker push ${{ secrets.DOCKER_USERNAME }}/openx_intern_task:1.0.0
 
     - name: Check Helm Chart Syntax
-      run: helm lint openx-flask-api/
+      run: helm lint openx-api/
