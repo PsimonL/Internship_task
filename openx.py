@@ -1,5 +1,6 @@
 import random
 from fastapi import FastAPI, HTTPException
+from fastapi.testclient import TestClient
 import uvicorn
 
 app = FastAPI()
