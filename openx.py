@@ -1,5 +1,6 @@
 import random
 from fastapi import FastAPI, HTTPException
+import uvicorn
 
 app = FastAPI()
 
@@ -32,10 +33,5 @@ async def probes_test():
 
 
 if __name__ == '__main__':
-    import uvicorn
     print("Server listening on port 5000...")
-    import fastapi
-
-    print("Wersja FastAPI:", fastapi.__version__)
-    print("Wersja uvicorn:", uvicorn.__version__)
-    uvicorn.run(app, host="0.0.0.0", port=5000, debug=True)
+    uvicorn.run(app, host="0.0.0.0", port=5000)
