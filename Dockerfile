@@ -5,6 +5,8 @@ WORKDIR /app
 COPY openx.py /app
 COPY requirements/prod.txt /app
 
+RUN apt-get update && apt-get install -y curl
+
 RUN pip install -r prod.txt
 
 EXPOSE 5000
