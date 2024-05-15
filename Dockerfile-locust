@@ -1,0 +1,9 @@
+FROM locustio/locust
+
+WORKDIR /locust
+
+COPY locustfile.py /locust
+
+EXPOSE 8089
+
+CMD ["locust", "-f", "locustfile.py", "--host", "http://api:8080", "--headless"]
