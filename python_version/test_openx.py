@@ -3,7 +3,7 @@ Unit tests for the openx module.
 """
 
 import unittest
-from python_version.openx import app
+from openx import app
 
 
 class TestOpenx(unittest.TestCase):
