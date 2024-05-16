@@ -21,7 +21,7 @@ minikube service openx-api
 
 # ============================================================================================================================================================
 # LOCUST STEPS
-locust -f locustfile.py --headless --host=http://localhost:8080
+locust -f locustfile.py --headless --csv output/locust.txt -t5m --host=http://localhost:8080
 docker build -t openx_intern_task_locust -f Dockerfile-locust .
 docker tag openx_intern_task_locust:latest srpl/openx_intern_task_locust:1.0.0
 docker login
