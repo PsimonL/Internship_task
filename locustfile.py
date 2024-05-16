@@ -4,6 +4,10 @@ This file contains a Locust performance testing script for simulating user behav
 # TODO:
 
 from locust import HttpUser, task, between
+import locust.stats
+
+locust.stats.CSV_STATS_INTERVAL_SEC = 5
+locust.stats.CSV_STATS_FLUSH_INTERVAL_SEC = 60
 
 class QuickstartUser(HttpUser):
     """
